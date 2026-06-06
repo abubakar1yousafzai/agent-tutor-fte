@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Periwinkle — dark mode.
+ * Ported verbatim from the original design system (tokens.jsx → PALETTES.periwinkle.dark).
+ * Exposed as CSS variables so Tailwind's semantic color tokens resolve to them.
+ */
+:root {
+  --primary: #8aa6ee;
+  --primary-deep: #a8bef2;
+  --primary-soft: #2a3461;
+  --primary-tint: #1a2147;
+  --bg: #0b1024;
+  --surface: #151b38;
+  --surface-alt: #1b2245;
+  --ink: #ebeefb;
+  --ink-soft: #b6bcd8;
+  --ink-mute: #7f87a6;
+  --line: #252c50;
+  --ok: #7dc79d;
+  --warn: #e8b868;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+}
+
+/* Thin, themed scrollbars to match the dark surfaces. */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--line);
+  border-radius: 6px;
+  border: 2px solid var(--bg);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--surface-alt);
+}
+
+/* Number columns line up in stats/KPIs. */
+.tnum {
+  font-feature-settings: "tnum";
+}
